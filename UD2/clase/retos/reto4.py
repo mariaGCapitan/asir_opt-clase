@@ -19,7 +19,7 @@ hay_digito = False
 hay_simbolo = False
 contador_requisitos = 0
 
-for caracter in clave: #MAa.9999999999999
+for caracter in clave: #parcticas aoisefjñoawisdjhfñoaiwsjhdfñaidjfhlsdfhij2.clase.py
     if caracter.isupper():
         hay_mayuscula = True
     elif caracter.islower():
