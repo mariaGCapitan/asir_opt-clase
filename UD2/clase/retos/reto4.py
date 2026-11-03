@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Comprobador de fortaleza de contraseñas
 
@@ -15,8 +17,9 @@ hay_mayuscula = False
 hay_minuscula = False
 hay_digito = False
 hay_simbolo = False
+contador_requisitos = 0
 
-for caracter in clave: #1234567890
+for caracter in clave: #MAa.9999999999999
     if caracter.isupper():
         hay_mayuscula = True
     elif caracter.islower():
@@ -28,6 +31,38 @@ for caracter in clave: #1234567890
 
 if len(clave) >= 12:
     print("Longitud: cumple")
+    contador_requisitos = contador_requisitos + 1
 else:
     print("Longitud: NO cumple")
 
+if hay_mayuscula == True: #if hay_mayuscula:
+    print("Mayúscula: cumple")
+    contador_requisitos = contador_requisitos + 1
+else:
+    print("Mayúscula: NO cumple")
+
+if hay_minuscula == True:
+    print("Minúsucla: cumple")
+    contador_requisitos = contador_requisitos + 1
+else:
+    print("Minúsucla: NO cumple")
+
+if hay_digito:
+    print("Dígito: cumple")
+    contador_requisitos = contador_requisitos + 1
+else:
+    print("Dígito: NO cumple")
+
+if hay_simbolo:
+    print("Símbolo: cumple")
+    contador_requisitos = contador_requisitos + 1
+else:
+    print("Símbolo: NO cumple")
+
+#print(f"El número de requisitos que cumple es: {contador_requisitos}")
+if contador_requisitos == 5:
+    print("Valoración: FUERTE")
+elif contador_requisitos == 3 or contador_requisitos == 4:
+    print("Valoración: MEDIA")
+else:
+    print("Valoración: DÉBIL")
